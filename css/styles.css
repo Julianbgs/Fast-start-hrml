@@ -21,7 +21,14 @@ body {
     margin-right: 0;
 }
 
+.header-menu__item:hover .header-menu__phantom {
+    opacity: 1;
+    transition: 1s all;
+}
+
 .header-menu__link {
+    position: relative;
+    z-index: 1000001;
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     font-size: 25px;
@@ -37,4 +44,40 @@ body {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.header-menu__phantom {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    width: 33.33%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255 ,0.3);
+    opacity: 0;
+    transition: 1s all;
+}
+
+ /*make pure*/
+.header-menu__phantom:hover {
+    display: none;
+}
+
+.header-menu__phantom img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header-menu__phantom--first {
+    left: 0;
+}
+
+.header-menu__phantom--second {
+    left: 33.33%;
+}
+
+.header-menu__phantom--third {
+    left: 66.66%;
 }
